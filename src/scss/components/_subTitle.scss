@@ -5,13 +5,149 @@
 		max-width: $mainMaxWidth-1140;
 		width: 100%;
 		margin: 0 auto;
+
 		.subtitle-block {
+			@media all and (max-width: $mainMaxWidth-1140){
+				width: calc(100% - 100px);
+				margin: 0 auto;
+				gap:0;
+			}
+			display: flex;
+			gap: 28px;
+			margin-top: 17px;
+			align-items: center;
+			justify-content: space-between;
+
 			a {
+				font-family: 'SF Pro Display Regular';
+				font-size: 14px;
+				color: $secondTextColor;
+
 				img {
 					width: 80px;
 					height: 32px;
 				}
 			}
+
+			.subTitle-input {
+				width: 443px;
+				align-items: center;
+				display: flex;
+				position: relative;
+
+				input {
+					width: 394px;
+					height: 35px;
+					border-radius: 100px;
+					border: 1px solid #D2D2D2;
+					padding-left: 35px;
+
+					&::placeholder {
+						color: #495057;
+						font-size: 15px;
+						font-weight: 400;
+					}
+
+					&:focus {
+						border-color: #80bdff;
+						outline: none;
+					}
+				}
+
+				&::before {
+					content: url("/src/assets/images/svg/search.svg");
+					position: absolute;
+					left: 13px;
+				}
+
+				&-search {
+					@include wh(16px, 16px);
+				}
+
+				.cart {
+					position: relative;
+				}
+
+				.union {
+					@include wh(30px, 30px);
+					margin-left: 10px
+				}
+
+				.blueCircle {
+					position: absolute;
+					width: 16px;
+					height: 16px;
+					bottom: 5px;
+					right: 0;
+					background: #5E8BCE;
+					border-radius: 10px;
+					display: flex;
+					justify-content: center;
+					font-size: 10px;
+					align-items: center;
+					color: #ffff;
+				}
+			}
+
+			&-number {
+				span {
+					color: $mainTextColor;
+					font-weight: 400;
+					font-family: "SF Pro Display Semibold";
+					font-size: 14px;
+				}
+			}
+
+			&-time {
+				color: $mainTextColor;
+				font-size: 14px;
+				font-weight: 300;
+			}
 		}
 	}
+}
+
+.subTitle-block2 {
+	position: sticky;
+	top: 0;
+	background: #F1F1F1;
+	margin: 13px 0;
+
+	.subtitle-container {
+		@media all and (max-width: $mainMaxWidth-1140){
+			width: calc(100% - 100px);
+			padding: auto 80px;
+		}
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px 0;
+
+		.subtitle-card {
+			display: flex;
+			text-align: center;
+			align-items: center;
+			flex-direction: column;
+			transition: 0.3s;
+
+			a {
+				color: #333333;
+			}
+
+			img {
+				height: 35px;
+			}
+
+			p {
+				font-size: 12px;
+				line-height: 14px;
+			}
+
+			&:hover {
+				filter: invert(52%) sepia(98%) saturate(262%) hue-rotate(176deg) brightness(84%) contrast(92%);
+				transition: .1s;
+			}
+		}
+	}
+
 }

@@ -1,0 +1,10 @@
+@mixin flex ($width: 0, $range: '') {
+    align-items: center;
+    display: flex;
+    gap:$width;
+    justify-content: $range;
+}
+@mixin wh($width: '', $height: ''){
+    width: $width;
+    height: $height;
+}
