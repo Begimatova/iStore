@@ -1,10 +1,29 @@
 @mixin flex ($width: 0, $range: '') {
     align-items: center;
     display: flex;
-    gap:$width;
+    gap: $width;
     justify-content: $range;
 }
-@mixin wh($width: '', $height: ''){
+
+@mixin wh($width: '', $height: '') {
     width: $width;
     height: $height;
+}
+
+@mixin tablet {
+    @media (max-width: $mainMaxWidth-992) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: $mainMaxWidth-1140) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width:$mainMaxWidth-576){
+        @content;
+    }
 }
